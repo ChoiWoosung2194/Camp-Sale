@@ -1,0 +1,79 @@
+.form-group label {
+    width: 170px;
+}
+
+#checkMailAuth {
+    margin-left: 232px;
+    margin-top: 10px;
+
+}
+img{
+    margin-left: 60px;
+}
+
+.checkFont {
+    font-size: 12px;
+    padding-left: 57px;
+}
+body {
+    font-family: Arial, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+form {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+    margin-left: 200px;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #47baf4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"]:hover {
+    background-color: #2b95ca;
+}
+
+a {
+    color: #47baf4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+li {
+    list-style: none;
+    margin-top: 20px;
+}
+
+li a {
+    display: block;
+    text-align: center;
+}
