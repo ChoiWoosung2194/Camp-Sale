@@ -1,0 +1,76 @@
+.campImg {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 250px;
+}
+#findIdModal {
+  z-index: 1041;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+}
+.find {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+}
+.shop-item-title {
+  text-decoration: none;
+  color: #333;
+  text-overflow: ellipsis;
+}
+#mainHead {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+#mainHead img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+.post {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.post-thumbnail img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.post-header {
+  padding: 10px 0;
+}
+
+.post-title {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.post-category {
+  font-size: 0.9em;
+  color: #999;
+}
+
+.post-rating {
+  font-size: 1em;
+  color: #ffa500;
+  margin: 5px 0;
+}
+
+.post-info {
+  font-size: 0.9em;
+  color: #555;
+}
+
+.post-price {
+  font-size: 1.1em;
+  color: #e91e63;
+  font-weight: bold;
+}

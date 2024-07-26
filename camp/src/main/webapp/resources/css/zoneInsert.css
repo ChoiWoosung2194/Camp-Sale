@@ -1,0 +1,48 @@
+#zoneInsert {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#zoneInsert input[type="text"],
+#zoneInsert input[type="number"],
+#zoneInsert input[type="file"],
+#zoneInsert button,
+#zoneInsert input[type="submit"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+#zoneInsert button,
+#zoneInsert input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#zoneInsert button:hover,
+#zoneInsert input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+#zoneInsert h3 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#zoneInsert hr {
+  border: 1px solid #ccc;
+  margin: 20px 0;
+}

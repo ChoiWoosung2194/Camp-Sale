@@ -1,0 +1,382 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: black;
+  user-select: none;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  padding: 0.9em 2em;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.3em;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0));
+}
+nav .left {
+  display: flex;
+  margin-left: 2em;
+}
+nav .left .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  padding: 0.5em;
+  width: 8rem;
+}
+nav .left .logo a {
+  width: 100%;
+}
+nav .left .logo a img {
+  max-width: 100%;
+}
+nav .left .mobile-menu {
+  display: none;
+}
+nav .left .menu-list {
+  display: flex;
+}
+nav .left .menu-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0.2em 1em 0.5em 1em;
+}
+nav .left .menu-list li a {
+  font-size: 0.8rem;
+}
+nav .right {
+  display: flex;
+  margin-right: 2em;
+}
+nav .right .icon {
+  padding: 0.5em 1em 0.5em 1em;
+}
+nav .right .profile {
+  padding: 0;
+}
+nav .right .profile a {
+  display: flex;
+  align-items: center;
+}
+nav .right .profile a .avatar-box {
+  width: 30px;
+  height: 30px;
+  background-color: #333;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+nav .right .profile i {
+  transition: all 300ms;
+}
+nav .right .profile:hover i {
+  transform: rotate(180deg);
+}
+nav .right .search {
+  border: 1px solid white;
+  background-color: black;
+}
+nav .right .search .search-bar {
+  display: flex;
+}
+nav .right .search .search-bar i {
+  margin-right: 0.5em;
+}
+nav .right .search .search-bar input {
+  background-color: transparent;
+  border: none;
+  color: #333;
+  outline: none;
+}
+main{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: flex;
+}
+/* ------------------------------------------ */
+main .list > tbody > tr:hover{
+	background-color: black;
+	color:white;
+	cursor:pointer
+}
+/* ------------------------------------------ */
+
+#main{
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr 5fr;
+  width: 60%;
+  height: 100%;
+}
+
+#top{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-column: span 2;
+}
+
+#top span{
+  color: rgb(78, 78, 78);
+  font-size: 3em;
+  font-weight: bold;
+}
+
+#line{
+  width: 100%;
+  height: 5px;
+  border: 2px solid rgb(139, 139, 139);
+  margin: 10px 0;
+}
+#side-category{
+  display: flex;
+  flex-direction: column;
+}
+
+#side-category div{
+  display: flex;
+  width: 100%;
+  height: 70px;
+  border-bottom: 2px solid rgb(202, 202, 202);
+  justify-content: flex-end;
+  align-items: end;
+}
+
+.ca{
+  display: flex;
+  color: rgb(70, 70, 70);
+  font-size: medium;
+  font-weight: 900;
+}
+
+#ca{
+  display: flex;
+  justify-content: end;
+  align-items:center;
+  width: 100%;
+  height: 500px;
+}
+
+#ca img{
+  width: 70%;
+  height: 70%;
+  margin-bottom: 50px;
+}
+
+#menu-list{
+  display: flex;
+  flex-direction: column;
+}
+#search{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 50px;
+  margin: 10px 10px;
+  margin-left: 50px;
+}
+
+#search #title{
+  color: rgb(145, 145, 145);
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  width: 95%;
+}
+
+#search #content{
+  color: rgb(114, 114, 114);
+  margin-bottom: 5px;
+}
+
+
+.side{
+  width: 20%;
+  height: 100%;
+}
+
+
+.list {
+  width: 95%;
+  border-collapse: collapse; /* 셀 경계선을 하나로 합침 */
+  margin: 25px 0; /* 테이블 위아래 여백 */
+  font-size: 18px; /* 폰트 크기 */
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+  margin-left: 50px;
+}
+
+/* 테이블 헤더 스타일 */
+.list thead tr {
+  background-color: #0e0d0d7e; /* 헤더 배경색 */
+  color: #ffffff; /* 텍스트 색상 */
+  text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+/* 테이블 셀 스타일 */
+.list th, .list td {
+  padding: 12px 15px; /* 셀 안쪽 여백 */
+}
+
+/* 짝수 행 배경색 */
+.list tbody tr:hover{
+  background-color: #ffffff;
+  color: black;
+}
+
+.list tbody tr td a{
+  color: black;
+}
+
+/* 행에 마우스를 올렸을 때 배경색 */
+.list tbody  tr td {
+  background-color: #ffffff;
+}
+
+/* 테이블 행 경계선 */
+.list tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+/* 마지막 행 경계선 */
+.list tbody tr:last-of-type {
+  border-bottom: 2px solid #797979;
+}
+
+
+
+footer {
+  width: 100%;
+  background-color: rgb(198, 196, 196);
+}
+footer .wrap {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+}
+footer .wrap .social-icons i {
+  font-size: 1.5rem;
+  margin: 0 0.3em;
+}
+footer .wrap .options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1em;
+}
+footer .wrap .options .option {
+  color: #676666;
+}
+
+@media screen and (max-width: 1437px) {
+  main .description {
+    bottom: 10%;
+  }
+}
+@media screen and (max-width: 982px) {
+  nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.3em;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0));
+  }
+  nav .left {
+    display: flex;
+    margin-left: 2em;
+  }
+  nav .left .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    padding: 0em;
+    width: 5rem;
+  }
+  nav .left .logo a {
+    width: 100%;
+  }
+  nav .left .logo a img {
+    max-width: 100%;
+  }
+  nav .left .mobile-menu {
+    z-index: 999;
+    display: block;
+    align-self: center;
+    margin-left: 10px;
+  }
+  nav .left .mobile-menu:hover + .menu-list {
+    display: flex;
+  }
+  nav .left .menu-list {
+    display: none;
+    top: 50px;
+    z-index: 999;
+    position: absolute;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.67);
+    padding: 1em 4em;
+  }
+  nav .left .menu-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0.2em 1em 0.5em 1em;
+    margin: 0.3em 0;
+  }
+  nav .left .menu-list li a {
+    font-size: 0.8rem;
+  }
+  nav .left .menu-list:before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    top: 0;
+    left: 0;
+  }
+  nav .right .search {
+    border: none;
+    background-color: transparent;
+  }
+  nav .right .search .search-bar {
+    display: flex;
+  }
+  nav .right .search .search-bar i {
+    margin-right: 0.5em;
+  }
+  nav .right .search .search-bar input {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: #333;
+    outline: none;
+  }
+}
+
+
+/*# sourceMappingURL=index.css.map */

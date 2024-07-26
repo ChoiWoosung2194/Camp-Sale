@@ -1,0 +1,55 @@
+
+#campInsert {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#campInsert form {
+  display: flex;
+  flex-direction: column;
+}
+
+#campInsert input[type="text"],
+#campInsert textarea,
+#campInsert input[type="file"],
+#campInsert input[type="submit"] {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+#campInsert input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#campInsert input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+#campInsert h3 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+#campInsert hr {
+  border: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+#campInsert textarea {
+  resize: none;
+}
