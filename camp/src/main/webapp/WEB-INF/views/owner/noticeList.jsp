@@ -41,10 +41,11 @@ pageEncoding="UTF-8"%>
               <th class="col-md-1">번호</th>
               <th class="col-md-1">제목</th>
               <th class="col-md-1">조회수</th>
+              <th class="col-md-1">삭제하기</th>
            </tr>
         </thead>
         <tbody>
-
+<
         </tbody>
      </table>
       </div>
@@ -75,6 +76,7 @@ pageEncoding="UTF-8"%>
                str += "<td><a href='/owner/notice/detail?no=" + voList[i].no + "'>" + voList[i].no + "</a></td>"; 
                str += "<td><a href='/owner/notice/detail?no=" + voList[i].no + "'>" + voList[i].title + "</a></td>";  
                str += "<td>" + voList[i].hit + "</td>"
+               str += "<td><button onclick='deleteNotice("+voList[i].no+");'>삭제</button></td>"
                str += "</tr>"
          }
          tbody.innerHTML = str;
@@ -83,5 +85,24 @@ pageEncoding="UTF-8"%>
          console.log(error);
       },
    });
+
+   function deleteNotice(no){
+      
+      $.ajax({
+         url : "/owner/api/notice",
+         method : "delete",
+         data : {
+         no : no
+         },
+         success : function(x){
+            alert(x);
+            window.location.replace("/owner/notice/list")
+         },
+         error : function(error){
+            console.log(error);
+         }
+         
+      });
+   }
 
 </script>

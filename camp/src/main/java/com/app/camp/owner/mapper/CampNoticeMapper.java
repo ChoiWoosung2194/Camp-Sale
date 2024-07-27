@@ -14,7 +14,8 @@ public interface CampNoticeMapper {
 
     @Select("SELECT *\n" +
             "FROM CAMPSITE_NOTICE\n" +
-            "WHERE OWNER_NO = #{no}")
+            "WHERE OWNER_NO = #{no} " +
+            "AND DEL_YN='N'")
     List<CampNoticeVo> getCampNotice(String no);
 
     @Insert("INSERT INTO CAMPSITE_NOTICE\n" +
@@ -34,4 +35,10 @@ public interface CampNoticeMapper {
 
     @Update("UPDATE CAMPSITE_NOTICE SET HIT = HIT + 1 WHERE NO = #{no}")
     int updateHit(String no);
+
+    @Update("UPDATE CAMPSITE_NOTICE SET DEL_YN = 'Y' WHERE NO = #{no}")
+    int deleteNotice(String no);
+
+    @Update("UPDATE CAMPSITE_NOTICE SET TITLE = #{title}, CONTENT = #{content} WHERE NO = #{no}")
+    int updateAll(CampNoticeVo vo);
 }

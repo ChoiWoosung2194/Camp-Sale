@@ -6,10 +6,7 @@ import com.app.camp.owner.vo.OwnerVo;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +22,6 @@ public class CampNoticeApiController {
         OwnerVo loginOwnerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
         String no = loginOwnerVo.getNo();
         List<CampNoticeVo> campNoticeList = service.getCampNotice(no);
-        System.out.println("campNoticeList = " + campNoticeList);
 
         return campNoticeList;
     }
@@ -45,5 +41,31 @@ public class CampNoticeApiController {
             return ResponseEntity.ok("등록 되었습니다.");
         }
 
+    }
+
+    //공지사항 삭제하기
+    @DeleteMapping
+    public ResponseEntity<String> deleteNotice(String no){
+        int result = service.delteNotice(no);
+
+        if(result != 1){
+            return ResponseEntity.internalServerError().body("삭제에 실패하였습니다.");
+        }else {
+            return ResponseEntity.ok("삭제 되었습니다.");
+        }
+    }
+
+    //공지사항 업데이트하기
+    @PostMapping("update")
+    public ResponseEntity<String> updateNotice(CampNoticeVo vo){
+
+        System.out.println("vo = " + vo);
+        int result = service.updateNotice(vo);
+
+        if(result != 1){
+            return ResponseEntity.internalServerError().body("업데이트에 실패했습니다.");
+        }else{
+            return ResponseEntity.ok("업데이트 되었습니다.");
+        }
     }
 }
