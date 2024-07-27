@@ -35,4 +35,12 @@ public class CampNoticeService {
     public int updateHit(String no) {
         return dao.updateHit(no);
     }
+
+    public int delteNotice(String no) {
+        return dao.deleteNotice(no);
+    }
+
+    public int updateNotice(CampNoticeVo vo) {
+        return dao.updateNotice(vo);
+    }
 }

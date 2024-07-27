@@ -1,0 +1,22 @@
+
+
+
+
+
+.panel-body {
+  padding: 15px !important;
+  background-color: #f9f9f9 !important;
+}
+
+.panel-body input[type="text"],
+.panel-body textarea {
+  width: 100% !important;
+  padding: 10px !important;
+  border: 1px solid #ddd !important;
+  border-radius: 4px !important;
+  margin-bottom: 10px !important;
+}
+
+.panel-body textarea {
+  height: 200px !important;
+}

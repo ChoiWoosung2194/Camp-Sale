@@ -37,4 +37,14 @@ public class CampNoticeDao {
     public int updateHit(String no) {
         return mapper.updateHit(no);
     }
+
+    public int deleteNotice(String no) {
+        return mapper.deleteNotice(no);
+    }
+
+    public int updateNotice(CampNoticeVo vo) {
+
+            return mapper.updateAll(vo);
+
+    }
 }
