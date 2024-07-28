@@ -4,11 +4,13 @@ import com.app.camp.member.service.MemberService;
 import com.app.camp.member.vo.MemberVo;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @RequiredArgsConstructor
 @Controller
@@ -17,10 +19,7 @@ public class MemberController {
 
   private final MemberService service;
 
-  @GetMapping("login")
-  public String login() {
-    return "member/login";
-  }
+
 
   @GetMapping("join")
   public String join() {
@@ -38,6 +37,10 @@ public class MemberController {
     return "/member/login";
   }
 
+  @GetMapping("login")
+  public String login() {
+    return "member/login";
+  }
 
   @PostMapping("login")
   public String login(MemberVo vo, HttpSession ss) {
@@ -55,5 +58,12 @@ public class MemberController {
   public String editMem(HttpSession session, Model model){
     return "member/memberEdit";
   }
+
+  @GetMapping("logout")
+  public ResponseEntity<String> logoutMem(HttpSession session, RedirectAttributes redirectAttributes) {
+    session.invalidate();
+    return ResponseEntity.ok("감사합니다. 안녕히 가세요...");
+  }
 }
+
 

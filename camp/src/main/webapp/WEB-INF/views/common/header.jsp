@@ -59,8 +59,15 @@
                            <c:if test="${loginVo == null}">
                               <a class="modal-basic" href="/member/login" id="header-login"><button
                                     class="btn btn-border-w btn-round btn-xs main-login-btn"
-                                    type="button">LOGIN</button></a>
+                                    type="button">로그인</button></a>
                            </c:if>
+                     </li>
+                     <li>
+                        <c:if test="${loginVo != null}">
+                             <a class="modal-basic" href="" id="header-login"><button
+                              class="btn btn-border-w btn-round btn-xs main-login-btn"
+                              type="button" onclick="logout();">로그아웃</button></a>
+                        </c:if>
                      </li>
                      <!-- 로그인/로그아웃 End -->
 
@@ -72,6 +79,22 @@
             </div>
          </nav>
          <!-- 상단해더 End -->
+          <script>
+            function logout(){
+               $.ajax({
+                  url : "/member/logout",
+                  method : "get",
+                  data : {},
+                  success : function(x){
+                     alert(x);
+                     location.href="/home";
+                  },
+                  error : function(error){
+                     console.log(error);
+                  }
+               });
+            }
+          </script>
 
 
       

@@ -34,7 +34,7 @@ pageEncoding="UTF-8"%>
         <h3><strong>FAQ</strong></h3>
 
 			<hr>
-    <table border="1">
+    <table  class="table table-hover mb-none">
         <thead>
            <tr>
               <th class="col-md-1" style="text-align: center;">번호</th>

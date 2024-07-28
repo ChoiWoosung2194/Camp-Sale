@@ -10,6 +10,13 @@
     <title>GamsungCamp</title>
     <jsp:include page="/resources/commonLib.jsp"></jsp:include>
     <link rel="stylesheet" href="/resources/css/home.css">
+
+    <script>
+            <c:if test="${not empty alertMsg}">
+                const msg = "${alertMsg}";
+                alert(msg);
+            </c:if>
+    </script>
 </head>
 
 <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">

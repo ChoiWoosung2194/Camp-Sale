@@ -91,6 +91,9 @@
 
                         <div class="panel-body transferlist">
                            <div class="table-responsive">
+                           <h3><strong>사업자 회원 관리</strong></h3>
+
+                           			<hr>
                               <table class="table table-hover mb-none">
                                  <thead>
                                     <tr>

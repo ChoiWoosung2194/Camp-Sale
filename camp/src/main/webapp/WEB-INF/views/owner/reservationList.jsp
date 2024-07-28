@@ -82,7 +82,7 @@ pageEncoding="UTF-8"%>
                str += "<td>" + voList[i].startDate +"</td>";
                str += "<td>" + voList[i].endDate +"</td>";
                str += "<td>" + voList[i].zoneName +"</td>";
-               str += "<td>" + voList[i].price +"</td>";
+               str += "<td>" + voList[i].totalPrice +"원 </td>";
                str += "</tr>"
          }
          tbody.innerHTML = str;

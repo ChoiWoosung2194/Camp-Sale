@@ -15,7 +15,8 @@
         <!-- start: search & user box -->
         <div class="header-right">
             <!-- 로그인/로그아웃 Start -->
-                     <li style="list-style: none;">
+            <ul style="list-style: none;">
+                     <li>
                         
                             <c:if test="${loginOwnerVo != null}">
                                 <a class="modal-basic" href="/owner/edit" id="header-login">
@@ -28,11 +29,15 @@
                                      class="btn btn-border-w btn-round btn-xs main-login-btn"
                                      type="button">LOGIN</button></a>
                             </c:if>
-                     
-                       
-
-
                      </li>
+                     <li>
+                         <c:if test="${loginOwnerVo != null}">
+                              <a class="modal-basic" href="" id="header-login"><button
+                               class="btn btn-border-w btn-round btn-xs main-login-btn"
+                               type="button" onclick="logout();">로그아웃</button></a>
+                         </c:if>
+                     </li>
+            </ul>
             <!-- 로그인/로그아웃 End -->
 
 
@@ -40,3 +45,19 @@
         </div>
         <!-- end: search & user box -->
     </header>
+    <script>
+        function logout(){
+           $.ajax({
+              url : "/member/logout",
+              method : "get",
+              data : {},
+              success : function(x){
+                 alert(x);
+                 location.href="/home";
+              },
+              error : function(error){
+                 console.log(error);
+              }
+           });
+        }
+    </script>

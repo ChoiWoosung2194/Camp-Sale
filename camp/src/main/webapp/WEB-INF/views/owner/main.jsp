@@ -149,17 +149,24 @@ pageEncoding="UTF-8"%>
 
 						<div class="row">
 							<div class="col-md-6">
-								<h3><strong>예약자 수</strong></h3>
+								<h3><strong>예약자 현황</strong></h3>
 								<!--차트가 그려질 부분-->
-								<canvas id="reservation_chart"></canvas>
-								<div style="text-align: center; padding: 10px;">
-									<span>예약자수</span>
-								</div>
-								<input type="hidden" id="reservation_statistics_data"
+							<table class="table table-hover mb-none">
+                                    <thead>
+                                       <tr>
+                                          <th class="col-md-1">예약번호</th>
+                                          <th class="col-md-1">예약자</th>
+                                          <th class="col-md-1">인원수</th>
+                                          <th class="col-md-1">체크인</th>
+                                          <th class="col-md-1">체크아웃</th>
+                                          <th class="col-md-1">존 이름</th>
+                                          <th class="col-md-1">가격</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
 
-										beforeday="${reservationStatistics.beforeYearDayCount}"
-										beforeweek="${reservationStatistics.beforeYearWeekCount}"
-										beforemonth= "${reservationStatistics.beforeYearMonthCount}"
+                                    </tbody>
+                                 </table>
 
 
 							</div>
@@ -176,3 +183,36 @@ pageEncoding="UTF-8"%>
 
 	</body>
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+   $.ajax({
+      url : "http://127.0.0.1:8080/owner/api/reservation",
+      method : "get",
+      data : {},
+      success : (x) => {
+
+         const voList = x;
+
+         const tbody = document.querySelector("tbody")
+         let str = "";
+
+         for(let i = 0; i < voList.length ; i++){
+               str += "<tr>"
+               str += "<td>" + voList[i].reservationNo +"</td>";
+               str += "<td>" + voList[i].memberName +"</td>";
+               str += "<td>" + voList[i].count +"</td>";
+               str += "<td>" + voList[i].startDate +"</td>";
+               str += "<td>" + voList[i].endDate +"</td>";
+               str += "<td>" + voList[i].zoneName +"</td>";
+               str += "<td>" + voList[i].totalPrice +"원 </td>";
+               str += "</tr>"
+         }
+         tbody.innerHTML = str;
+      },
+      error : (error) => {
+         console.log(error);
+      },
+   });
+
+</script>
