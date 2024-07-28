@@ -15,7 +15,7 @@ pageEncoding="UTF-8"%>
        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 		<jsp:include page="/resources/commonCssAdmin.jsp"/>
-
+		<link rel="stylesheet" href="/resources/css/campNotice.css">
 	</head>
 	<body >
 		<section class="body">
@@ -34,15 +34,15 @@ pageEncoding="UTF-8"%>
         <h3><strong>공지사항 등록하기</strong></h3>
 
 			<hr>
-			
+			<div class="insertArea">
 				<input type="text" name="title" placeholder="제목">
 				<br>
 				<br>
-				<textarea style="width: 400px; height: 300px;" name="content" placeholder="공지사항 내용"></textarea>
+				<textarea name="content" placeholder="공지사항 내용"></textarea>
 				<br>
 				<br>
 				<button onclick="insertNotice();">작성하기</button>
-				
+			</div>	
          <!---------------------------------------------------------------------------------->
 </section>
 

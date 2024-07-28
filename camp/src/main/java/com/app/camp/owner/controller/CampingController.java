@@ -16,6 +16,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -117,15 +118,19 @@ public class CampingController {
 
     //일정관리(캘린더)
     @PostMapping("calender")
-    public int insertDay(dayoffVo vo , HttpSession session){
+    @ResponseBody
+    public int insertDay(dayoffVo vo , HttpSession session) {
         OwnerVo loginOwnerVo = (OwnerVo) session.getAttribute("loginOwnerVo");
         String no = loginOwnerVo.getNo();
         vo.setOwnerNo(no);
         int result = service.insertDay(vo);
 
-        return result;
+        if (result != 1) {
+            return 0;
+        } else {
+            return 1;
         }
-
+    }
 
 
 //    //캠핑장 사진 업로드

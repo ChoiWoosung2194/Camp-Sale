@@ -11,5 +11,5 @@ public class OwnerReservationVo {
     private String endDate;
     private String count;
     private String zoneName;
-    private String price;
+    private String totalPrice;
 }

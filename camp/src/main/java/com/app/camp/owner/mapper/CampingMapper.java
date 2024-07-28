@@ -38,7 +38,7 @@ public interface CampingMapper {
     @Insert("INSERT INTO DAYOFF " +
             "(NO , OWNER_NO, TITLE, START_DATE, END_DATE) " +
             "VALUES " +
-            "(SEQ_DAYOFF_NO.NEXTVAL, #{ownerNo} ,#{title} ,#{startDate} , #{endDate}")
+            "(SEQ_DAYOFF_NO.NEXTVAL, #{ownerNo} ,#{title} ,#{startDate} , #{endDate} )")
     int insertDay(dayoffVo vo);
 
     @Select("SELECT NO FROM CAMPSITE WHERE OWNER_NO = #{ownerNo}")
