@@ -150,7 +150,6 @@ pageEncoding="UTF-8"%>
 						<div class="row">
 							<div class="col-md-6">
 								<h3><strong>예약자 현황</strong></h3>
-								<!--차트가 그려질 부분-->
 							<table class="table table-hover mb-none">
                                     <thead>
                                        <tr>

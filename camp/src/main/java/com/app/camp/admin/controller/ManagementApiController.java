@@ -33,9 +33,7 @@ public class ManagementApiController {
 
     @PostMapping("approval")
     public ResponseEntity<String> updateApproval(String no){
-
         int result = service.updateApproval(no);
-        
         if(result != 1){
             return ResponseEntity.internalServerError().body("등록에 실패하였습니다.");
         }else {

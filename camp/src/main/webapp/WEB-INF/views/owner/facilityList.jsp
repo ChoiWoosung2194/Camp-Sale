@@ -174,9 +174,7 @@ pageEncoding="UTF-8"%>
 <script>
   
   function updateFacil(button){
-    // 부모 요소에서 img 태그를 찾기
    const imgElement = button.parentElement.querySelector('img');
-    // data-name 속성 값 가져오기
     const name = imgElement.dataset.name;
     console.log(name);
    
@@ -189,12 +187,8 @@ pageEncoding="UTF-8"%>
       success : (x) => {
          alert(x);
          const checkImageUrl = '/resources/images/checkPoint.png';
-            
-
             imgElement.src = checkImageUrl;
             imgElement.alt = '체크';
-
-
             button.disabled = true;
          
       },
